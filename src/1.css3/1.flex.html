@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex布局</title>
+    <style> 
+        /* 入门实例 */
+        /* 实例源：https://www.cnblogs.com/myzhibie/p/4318904.html */
+        /* CSS3为我们提供了一种可伸缩的灵活的web页面布局方式-flexbox布局，
+        它具有很强大的功能，可以很轻松实现很多复杂布局，在它出现之前，我们经常使用的布局方式是浮动或者固定宽度+百分比来进行布局，代码量较大且难以理解。 */
+        .flex-container{
+            display:flex;
+            width:500px;
+            height:500px;
+            background-color:#ccc;
+        }
+        .flex-item{
+            color:red;
+            width:100px;
+            height:100px;
+            margin:5px;
+            background-color:blue;
+        }
+        .flex-item:nth-child(1){
+            height:110px;
+        }
+        .flex-item:nth-child(2){
+            height:140px;
+        }
+        .flex-item:nth-child(3){
+            height:120px;
+        }
+        /* align-cotent和align-items */
+        /* 属性用来表示换行之后各个伸缩行的对齐方式，
+        它的取值有 stretch,flex-start,flex-end,center,space-between,space-around，意义和align-items属性取值意义相同 
+        */
+        .align{
+            flex-flow:row wrap;
+            align-items: baseline;
+            align-content: space-between;
+        }
+        .align .flex-item{
+            width:100px;
+            height:100px;
+        }
+        /* order */
+        /* 默认情况下，每个伸缩项的order都是0，改属性可正可负，越大的值会被排列在越后面。 */
+        .order{
+            justify-content: center;
+            align-items: baseline;
+            flex-flow:row wrap;
+            align-content: space-around;
+        }
+        .order .flex-item{
+            order:0;
+        }
+        .order .order1{
+            order:1;
+        }
+        .order .order2{
+            order:2
+        }
+        /* 强大的margin */
+        /* margin属性在flexbox布局中有很强大的作用，如果给某个可伸缩项设置某个方向上的margin为auto，
+        那么这个可伸缩项就会在这个方向上占用该方向的剩余空间来作为自己的这个方向上的margin。 
+        */
+        .margin{
+            justify-content: space-around;
+            align-items: baseline;
+            align-content: space-between;
+        }
+        .left{
+            margin-right:auto;
+        }
+        .right{
+            margin-left:auto;
+        }
+        .center{
+            justify-content: center;
+        }
+        .center .flex-item{
+            margin:auto;
+            display:inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>入门实例</h1>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </div>
+    <h1>垂直居中</h1>
+    <div class="flex-container align">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>                    
+    </div>
+    <h1>顺序</h1>
+    <div class="flex-container order">
+        <div class="flex-item order1">1</div>
+        <div class="flex-item order2">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+    </div>
+    <h1>强大的margin</h1>
+    <div class="flex-container margin">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item right">3</div>
+    </div>
+    <h2>margin:auto</h2>
+    <div class="flex-container center">
+        <div class="flex-item">1</div>
+    </div>
+</body>
+</html>
