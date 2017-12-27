@@ -1,0 +1,25 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "走商",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "日志"
+    }]
+    ,"borderStyle": "white",
+    "position":"top",
+    "selectedColor":"red"
+  },
+  "debug":true
+}
