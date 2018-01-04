@@ -1,0 +1,32 @@
+{
+  "name": "studys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "script-name": "babel-node script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanyg/studys.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanyg/studys/issues"
+  },
+  "homepage": "https://github.com/dylanyg/studys#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest": "^6.24.1",
+    "co": "^4.6.0",
+    "global": "^4.3.2",
+    "http-server": "^0.10.0",
+    "thunkify": "^2.1.2",
+    "vue": "^2.5.13",
+    "vue-cli": "^2.9.2"
+  }
+}
