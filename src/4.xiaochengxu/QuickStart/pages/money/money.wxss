@@ -1,0 +1,74 @@
+/* pages/money/money.wxss */
+.money-view {
+    background-color: #f6f6f6;
+}
+
+.view-bg{
+    width: 750rpx;
+    height: 400rpx;
+    background: linear-gradient(#ff2d73, #ff2d73 340rpx, #f6f6f6 340rpx, #f6f6f6);
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+.view-bg::after {
+    position: absolute;
+    top: 340rpx;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 60rpx;
+    background: url("https://static.58.com/lbg/mengchong/image/icon/bg-circle.png?1") no-repeat center;
+    background-size: 750rpx auto;
+}
+
+.money-info{
+    position: relative;
+    z-index: 2;
+    width: 690rpx;
+    height: 720rpx;
+    margin: 40rpx 30rpx;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 100rpx 0 46rpx;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+.small-gray{
+    font-size: 24rpx;
+    color: #999999;
+    text-align: center;
+}
+
+.big-money{
+    height: 123rpx;
+    line-height: 123rpx;
+    font-size: 88rpx;
+    color: #333333;
+    margin: 12rpx 12px 0;
+}
+
+.money-detail{
+    height: 64rpx;
+    line-height: 64rpx;
+    font-size: 28rpx;
+    color: #FF552E;
+}
+
+.money-pocket{
+    width: 400rpx;
+    height: 88rpx;
+    background: #FF552E;
+    border-radius: 50rpx;
+    color: #fff;
+    line-height: 88rpx;
+    margin: 74rpx auto 140rpx;
+}
+
+.money-pocket-none{
+    background-color: #eee;
+}

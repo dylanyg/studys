@@ -1,29 +1,47 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-    <map></map>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-
-  </view>
-<view>
-  <view>{{year}}年{{month}}月{{day}}日</view>
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
-    <picker-view-column>
-      <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
-    </picker-view-column>
-  </picker-view>
-</view>
+<!--pages/index/index.wxml-->
+<view class="wrap">
+    <!-- banner -->
+    <navigator class="header" url="../activity/activity"  hover-class="none">
+        <image class="banner" src="https://static.58.com/lbg/mengchong/image/bannerT.png" mode="aspectFill"></image>
+        <view class="activeZone">
+            <view class="visBanner"  src="../../assets/image/bannerB{{bannerSrc}}.png" mode="aspectFill"></view>
+            <view class="activeTime">
+                <view class="activeTitle">拍短视频！晒宠物！赢大奖！</view>
+                <view class="activeCountDown" wx:if="{{!noCountDown}}">开奖倒计时<text class="time">{{timeTemp[0]}}</text>天<text class="time">{{timeTemp[1]}}</text>:<text class="time">{{timeTemp[2]}}</text>:<text class="time">{{timeTemp[3]}}</text></view>
+                <view class="noCountDown" wx:else>活动已结束！</view>
+            </view>
+        </view>
+    </navigator>
+    <!-- nav -->
+    <view class="nav">
+        <view class="navTitle">
+            全国排行
+            <navigator open-type="switchTab" class="checkMore" url="../ranking/ranking" hover-class="none">查看更多</navigator>
+        </view>
+        <view class="navLists" wx:if="{{petList.length>0}}">
+            <navigator url="/pages/center/center?petId={{item.id}}" hover-class="none" wx:for="{{petList}}"wx:key="{{ item.id }}" wx:for-index="idx" wx:if="{{idx<5}}"class="ranking-list-pet num{{idx+1}}" hover-class="none">
+                    <view>
+                        <image mode="aspectFill" src="{{item.portrait + '?w=100'}}"/>
+                    </view>
+                    <view class="petNickName">{{ item.name }}</view>
+                    <view class="petNum">{{ item.formatvote }}</view>
+            </navigator>
+        </view>
+        <view wx:else class="noRankList">
+            暂无排行数据
+        </view>
+    </view>
+    <!-- 最新上传视频 -->
+    <view class="con">
+        <navigator class="conItem" wx:for="{{ videoList }}" wx:key="{{ item.id }}" url="../detail/detail?id={{item.id}}" hover-class="none">
+            <image class="itemAvatar" src="{{ item.portrait ? item.portrait + '?w=372' : defaultSrc }}" mode="aspectFill"></image>
+            <view class="petInfo">
+                <view class="content">{{ item.summary }}</view>
+                <view class="focusInfo">
+                    <view class="playNum">{{ item.formatvisit }}次播放</view>
+                    <view class="focusTime">{{ item.formatvote }}</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
 </view>

@@ -1,0 +1,38 @@
+<!--pages/myPrize/myPrize.wxml-->
+<view class="container myPrize-container" scroll-y="true" enable-back-to-top="true">
+    <view class="myPrize-banner"></view>
+    <view wx:if="{{prizeMsg.status == 0}}" class="myPrize noAward">
+        <image src="https://static.58.com/lbg/mengchong/image/rank_none.png?w=60" mode="aspectFill" class="noAward-pic" />
+        <text class="noAward-text">暂时还没有开奖，距离开奖时间还有</text>
+        <view wx:if="{{showTime}}" class="noAward-time">{{timeArray[0]}}<text class="noAward-time-txt">天</text>{{timeArray[1]}}<text class="noAward-time-txt">时</text>{{timeArray[2]}}<text class="noAward-time-txt">分</text>{{timeArray[3]}}<text class="noAward-time-txt">秒</text></view>
+    </view>
+    <view wx:elif="{{(prizeMsg.status == 1) && prizeMsg.title}}" class="myPrize winAward">
+        <image class="mypet-avatar" mode="aspectFill" src="{{prizeMsg.portrait}}?w=120"/>
+        <view class="mypet-num">萌宠号:{{prizeMsg.petCode}}</view>
+        <view class="mypet-name">{{prizeMsg.petname}}</view>
+        <view class="mypet-win">恭喜您获奖！</view>
+        <view class="mypet-tip">您的宠物在全国排行榜中荣获</view>
+        <view class="mypet-prize">{{prizeMsg.title}}</view>
+        <view class="mypet-cash">
+            <view class="mypet-cash-num"><text class="mypet-cash-num-txt">{{prizeMsg.awards}}</text></view>
+            <view class="mypet-cash-packet">现金红包</view>
+        </view>
+        <view class="mypet-reward">红包请在我的资金中查看提现</view>
+    </view>
+    <view wx:elif="{{(prizeMsg.status == 1) && !prizeMsg.title}}" class="myPrize winAward">
+        <image class="mypet-avatar" mode="aspectFill" src="{{prizeMsg.portrait}}?w=120"/>
+        <view class="mypet-num">萌宠号:{{prizeMsg.petCode}}</view>
+        <view class="mypet-name">{{prizeMsg.petname}}</view>
+        <view class="mypet-win">很遗憾您未获奖！</view>
+        <view class="mypet-tip">您的宠物在全国排行榜中荣获</view>
+        <view class="mypet-prize">第<text class="mypet-prize-text">{{prizeMsg.countryRank}}</text>名</view>
+        <view class="mypet-cash">
+            <view class="mypet-cash-num">感谢参与</view>
+            <view class="mypet-cash-packet">再接再厉</view>
+        </view>
+    </view>
+    <view wx:elif="{{prizeMsg.status == 2}}" class="noPrize">
+        <image src="https://static.58.com/lbg/mengchong/image/rank_none.png?w=60" mode="aspectFill" class="noPrize-pic" />
+        <view class="noPrize-txt">您没有参加比赛，未获得奖品~</view>
+    </view>
+</view>

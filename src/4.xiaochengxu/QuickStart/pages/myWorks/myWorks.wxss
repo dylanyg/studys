@@ -1,0 +1,257 @@
+/* pages/myWorks/myWorks.wxss */
+page {
+    background-color: #FFFFFF;
+}
+
+.btn-list {
+    height: 128rpx;
+    background: #F6F6F6;
+}
+
+.btn-list-font {
+    font-size: 34rpx;
+    line-height: 88rpx; /* 让文字垂直居中 */
+    color: #333333;
+    font-family: PingFangSC-Regular;
+    letter-spacing: 0rpx;
+}
+
+.btn-list-editing {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sharebox {
+    height: 118rpx;
+    background-color: #333333;
+    margin-bottom: 11rpx;
+    padding: 21rpx 30rpx;
+}
+
+.sharebox-font {
+    font-family: 'PingFangSC-Regular';
+    letter-spacing: 0rpx;
+}
+
+.sharebox .item {
+    display: block;
+    float: left;
+}
+
+.sharebox .avator {
+    width: 78rpx;
+    height: 78rpx;
+    border-radius: 100%;
+    border: 1px solid #979797;
+}
+
+.sharebox .detail {
+     /* display: inline-block;  */
+     margin-top: 2rpx;
+     margin-left: 25rpx;
+}
+
+.sharebox .detail .username {
+    height: 40rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #FFFFFF;
+}
+
+.sharebox .detail .more {
+    font-size: 24rpx;
+    line-height: 33rpx;
+    color: #FFFFFF;
+}
+
+.sharebox .share-btns {
+    float: right;
+    margin-top: 10rpx;
+}
+
+.sharebox .btn-share {
+    width: 124rpx;
+    height: 64rpx;
+    background-color: #FF2D73;
+    border-radius: 4rpx;
+    padding: 0 20rpx;
+    display: inline-block;
+
+    font-size: 28rpx;
+    line-height: 64rpx;
+    color: #FFFFFF;
+}
+
+.sharebox .btn-share.follow {
+    background-color: #FA9609;
+}
+
+.sharebox .btn-share.share {
+    background-color: #FF552E;
+    margin-left: 30rpx;
+}
+
+.btn-top {
+    width: 330rpx;
+    height: 88rpx;
+    background: #FFFFFF;
+    border-radius: 50rpx;
+    display: inline-block;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.btn-left {
+    margin-left: 30rpx;
+    margin-right: 15rpx;
+}
+
+.btn-right {
+    margin-left: 15rpx;
+    margin-right: 30rpx;
+}
+
+/* 列表为空的情况 */
+.box-empty {
+    width: 339rpx;
+    margin-top: 171rpx;
+    margin-left: 207rpx;
+    margin-right: 204rpx;
+}
+
+.box-empty .img-empty {
+    width: 339rpx;
+    height: 283rpx;
+    display: block;
+}
+
+.box-empty .text-empty {
+    margin-top: 58rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #BDBDBD;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+/* 作品列表flex布局 */
+.flex-wrp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.work-font {
+    font-family: PingFangSC-Regular;
+    letter-spacing: 0;
+}
+
+/* 单个作品容器 */
+.box-work {
+    width: 372rpx;
+    height: 342rpx;
+    position: relative;
+}
+
+/* 作品图片 */
+.box-work .img-work {
+    width: 372rpx;
+    height: 210rpx;
+    display: block;
+}
+
+/* 编辑状态-选中 */
+.box-work.box-work-checked {
+    background-color: #F9EAEA;
+}
+
+.box-work .box-work-info {
+    padding: 19rpx 25rpx;
+}
+
+.box-work .work-title {
+    height: 30rpx;
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.box-work .work-info {
+    height: 33rpx;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #999999;
+}
+
+/* 图标 */
+.icon {
+    display: inline-block;
+    width: 20rpx;
+    height: 19rpx;
+    background-size: 20rpx 19rpx;
+}
+.icon.vote {
+    background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAb1BMVEUAAACrq6vCwsKqqqqrq6urq6uurq6urq6ysrKwsLCrq6uqqqqrq6urq6urq6urq6urq6usrKytra2tra2rq6urq6uqqqqrq6utra2rq6urq6urq6usrKyrq6urq6urq6uqqqqrq6usrKytra2qqqrZc7zCAAAAJHRSTlMA6QP04sIoMA0L+N7OnH9WNx8aE9rUt2s9ubCsZGDLlZN2UEFTDGAvAAAAtElEQVQY032Q5w6DMBCDLwsIK4QNhU6//zM2DEFTqfUfS19yPuvol/pRiuvEeZcKNvYr4hlWDWrznDuYQTysNgJgTx3mMXKiAqIgp5DJYPEX4oAuyPfkcPM7MmoQkKcCCQloH0aIKfn+WYK5zNmHHVqakUSfrGIwxFO0/GRaQTmzDK0+tijIcqsNVe2zKeS+N5Bo1mdbo7ZHiwYydLUZ0mXkjBJTF2M4ipz3u3HyZZLa0D+9AeUmDNdV2RFEAAAAAElFTkSuQmCC');
+}
+.icon.play {
+    background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAJ1BMVEUAAACrq6utra2qqqqrq6urq6uxsbGqqqqrq6urq6urq6urq6uqqqrOi5rXAAAADHRSTlMA5xiydz0J+XrSqlVrGOjEAAAAW0lEQVQI12NABqyGZ4BAOADI7DkDBieAgsedQHIqNQEMzEcg6nwMGBgPQZg6Agw8BxgY0oBMIA1iTtwAZ545pQBnnhFDYSIUYGpLgBiGsALZYoRzEI5EcToCAAD0WTMb1T0fWgAAAABJRU5ErkJggg==');
+}
+
+.work-info .play-count {
+    float:left;
+}
+
+.work-info .follow-num {
+    float: right;
+}
+
+.box-fansnum {
+    width: 100%;
+    height: 60rpx;
+    padding-left: 20rpx;
+    padding-top: 14rpx;
+    position: absolute;
+    bottom: 0rpx;
+}
+
+.box-fansnum-font {
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    line-height: 33px;
+    color: #999999;
+}
+
+/* 编辑状态-勾选框 */
+.box-work .checkbox {
+    width: 46rpx;
+    height: 46rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+}
+
+/* 编辑状态-蒙版 */
+.box-work .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+}
+
+/* 编辑状态-删除按钮 */
+button.delete {
+    width: 100%;
+    height: 100rpx;
+    color: #FF552E;
+    font-family: PingFangSC-Regular;
+    font-size: 36rpx;
+    border-top: 1rpx solid #F3F3F3;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}

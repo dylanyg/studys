@@ -1,0 +1,34 @@
+<!--pages/found/found.wxml-->
+<view class="scrll-box">
+<scroll-view class="scroll-view" scroll-x style="width: 100%">
+    <text wx:for="{{tabs}}" wx:key="{{index}}" class="tabs {{currentType == item.index ? 'active':''}} {{withLocal ? '' : 'four-tabs'}}" bindtap="tapClicked" data-index="{{item.index}}" data-type="{{item.type}}" style="{{item.index == 1 ? 'margin-left:30rpx;' : '' }}">{{item.name}}</text>
+</scroll-view>
+</view>
+
+<view class="container" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <view class="vbox" wx:for="{{videos}}" wx:key="{{portrait}}">
+        <navigator url="../detail/detail?id={{item.id}}">
+            <view>
+                <image src="{{item.portrait || 'https://static.58.com/lbg/mengchong/image/element/video-default.png'}}?w=372" mode="aspectFill" class="vimg" />
+                <text class="vtitle">{{item.summary}}</text>
+                <view class="vtipcontainer">
+                    <view class="vtip">
+                        <image src="https://static.58.com/lbg/mengchong/image/playV.png" mode="scaleToFill" class="vxin" />
+                        <text class="vcount">{{item.formatvisit}}次播放</text>
+                    </view>
+                    <view class="vtip aling-right">
+                        <image src="https://static.58.com/lbg/mengchong/image/icon/xin.png" mode="scaleToFill" class="vxin" />
+                        <text class="vcount">{{item.formatvote}}</text>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view class="empty" hidden="{{notempty}}">
+        <image class="empty-img" src="https://static.58.com/lbg/mengchong/image/empty.png" mode="scaleToFill"/>
+        <text class="empty-text">暂时还没有内容，去看看其他视频吧~</text>
+    </view>
+</view>
+<!-- <view class="loading" hidden="{{isHideLoading}}">
+     <image class="loading-img" src="https://static.58.com/lbg/mengchong/image/icon/loading.png"></image><text class="loading-text">加载中...</text>
+</view> -->

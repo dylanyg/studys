@@ -1,0 +1,65 @@
+<!--pages/regist/regist.wxml-->
+<view class="pet-view">
+  <view class="pet_base_con pet_picture-con"   bindtap="selectImage">
+    <view class="pet_base">上传宠物头像</view>
+    <view class="select_pic base_select">
+      <view>
+        <image class="set_image" src="{{form.portrait}}?w=72" mode="aspectFill"></image>
+        <image class="choose_pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAaCAYAAAEfyjb0AAAAAXNSR0IArs4c6QAAAkRJREFUOBGFVE1LHEEQ7WqdYIjgH3AFYccf4T+QIAQkh0ggIB6UCIIgkYgh5OMgBgyCBgKRKIggIRBE8ODBX+FhZ/ays7nknEPETHde9W71du8um4btrnqvXlX1x45S4ajVGlaHwCA7y4rPCtM3H8Ry74SGJ9io1YrvIdmxW2xXjhAkiWWQSP1wPnpYZMA5ed545B1G4Nw4pj25HBKRphVNRFHXURFRTk1NeNwbQqKB0trWyXFgzxFaq9YkuF5vPPEZcBbzStkTJtHHCfp56myepEkQlyBmGIsGag5HgDho6BercRifBJNVo5kjdoxRS6i/J4Rfs6z5gdWtX7HjCTGQ/oUEZFnjPeN+S+wAXECZL44geh2RDOZ5c9MY884F8BQOTi1+dJSoa4Tgm/Nk+wJcGRBDfKWOxP7u5GZAJCBcBg0F3m3r+IgqIyD+SmqdJMk6pxgdHX6QpnQrBK+uRr3efGiMPUSGMUC71er4SxaEgf1sQi8JSv8GeS8MgHgf/a2EWLftKiMB5Xmxj9Nd7gkgtZumE/6lhXy/G3iDG9gKg9hGJ9voZCPEe8RCopMVdLLHXQnGq9b6Lc7kFdsRwUD34D9EWdKxXEeH17P/FXMwuviI21jtCNmii4FiPPJla81BLOL964M0HX/eV4xn+wx7PcTPv712gq84tAV5A5EYlR5jb6cQDYXV8P06q1Yr8xCVEc5Onv+cNqa8hpmwLwOic4jmILoTLFzd9wCVFgGGwqskqcxOTtKfMHigXRTF/YEBXeQ/+O8kV5eGWTAAAAAASUVORK5CYII=" mode="aspectFill" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+  <view class="pet_base_con">
+    <view class="pet_base">宠物名称</view>
+    <view class="base_text text_margin" >
+      <input bindblur="petName" value="{{form.petname}}" placeholder="输入宠物的名字"/>
+    </view>
+  </view>
+  <view class="pet_base_con">
+    <view class="pet_base">宠物类别</view>
+    <view class="base_select">
+      <button wx:for="{{typeList}}" data-item="{{item}}" bindtap="selectType" class="btn_margin base_btn {{item.id === form.cate ? 'base_btn_curr' : ''}}">
+          {{item.name}}
+      </button>
+    </view>
+  </view>
+  <view class="pet_base_con">
+    <view class="pet_base">宠物性别</view>
+    <view class="base_select">
+      <button wx:for="{{sexList}}" data-item="{{item}}" class="btn_margin base_btn {{item.id === form.gender ? 'base_btn_curr' : ''}}" bindtap="selectSex">{{item.name}}</button>
+    </view>
+  </view>
+  <view class="pet_base_con">
+    <view class="pet_base">是否绝育</view>
+    <view class="base_select">
+      <button wx:for="{{hasBabyList}}" data-item="{{item}}" bindtap="judgeBaby" class="btn_margin base_btn {{item.id === form.sterilization ? 'base_btn_curr' : ''}}">{{item.name}}</button>
+    </view>
+  </view>
+  <view class="pet_base_con">
+    <view class="pet_base">出生日期</view>
+    <view class="base_text">
+      <picker mode="date" bindchange="selectDate" value="{{date}}" end="{{currentDate}}">{{date}}</picker>
+    </view>
+  </view>
+  <view class="pet_base_con">
+    <view class="pet_base">体重</view>
+    <view class=" base_text text_margin">
+      <input bindblur="petWeight"  value="{{form.weight}}" type="text" placeholder="默认单位是千克(kg)"/>
+    </view>
+  </view>
+  <view class="pet_base_con">
+    <view class="pet_base">地区</view>
+    <view  class="base_text">
+      <picker bindchange="selectArea" value="{{index}}" range="{{allAreaData}}" disabled="{{code.length !== 0 ? true : false}}">{{allAreaData[index]}}</picker>
+    </view>
+  </view>
+  <view class="pet_base_con one_words_con">
+    <view class="pet_base">特点</view>
+    <view class=" base_text text_margin">
+      <input bindblur="introduceYourPet"  value="{{form.summary}}" type="text" placeholder='最多十个字' />
+    </view>
+  </view>
+  <view class="naviga_con">
+    <button bindtap="submit" class="submit_btn">{{submit}}</button>
+  </view>
+</view>

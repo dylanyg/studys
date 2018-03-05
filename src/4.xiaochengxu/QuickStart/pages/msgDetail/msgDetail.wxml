@@ -1,0 +1,10 @@
+<!--pages/myMsgs/myMsgs.wxml-->
+<view class="container msgDetail-container" scroll-y="true" enable-back-to-top="true">
+    <view class="msg-detail">
+        <view class="msg-detail-tip">请不要发布与宠物不相关或违法的视频</view>
+        <view class="msg-detail-con">
+            <view class="answer">{{messageDetail.title}}</view>
+            <view class="reason">原因：{{messageDetail.reason}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,126 @@
+/* pages/uploadVideo/uploadVideo.wxss */
+page{
+    background: url('http://img.58cdn.com.cn/lbg/mengchong/image/camera-bg.png?12') no-repeat;
+    background-color: #ffd591;
+    background-size: 750rpx auto;
+}
+
+.video-view{
+    overflow: hidden;
+}
+
+.video-container{
+    width: 690rpx;
+    height: 388rpx;
+    margin: 408rpx auto 0;
+    border-radius: 20rpx;
+    background-color: #fff;
+    padding: 15rpx;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.camera-hdgz{
+    position: absolute;
+    right: 46rpx;
+    top: 0;
+    width: 90rpx;
+    height: 98rpx;
+}
+
+.camera-hdgz-img{
+    width: 100%;
+    height: 100%;
+}
+
+.camera-icon{
+    display: block;
+    width: 120rpx;
+    height: 91rpx;
+    margin: 35rpx auto 0;
+}
+
+.shoot-text{
+    height: 48rpx;
+    font-size: 34rpx;
+    margin: 25rpx 0 46rpx;
+}
+
+.shoot-button{
+    background: #FF552E;
+}
+
+.video-tag, .video-tip{
+    width: 660rpx;
+    height: 358rpx;
+    line-height: 358rpx;
+    text-align: center;
+    border-radius: 20rpx;
+    color: #eee;
+}
+
+.video-title{
+    width: 690rpx;
+    height: 198rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    margin: 28rpx auto 0;
+    position: relative;
+}
+
+.video-title-ta{
+    width: 100%;
+    height: 100%;
+    padding: 30rpx;
+    font-weight: 200;
+    box-sizing:border-box;
+    font-size: 34rpx;
+}
+
+.video-title .word-limit {
+    position: absolute;
+    right: 30rpx;
+    bottom: 30rpx;
+    font-size: 26rpx;
+    color: #999999;
+}
+
+.video-option{
+    display: flex;
+    justify-content: center;
+}
+
+.video-button{
+    display: block;
+    font-size: 34rpx;
+    text-align: center;
+    width: 330rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #fff;
+    border-radius: 50rpx;
+}
+
+.video-button-re, .video-button-done{
+    margin: 40rpx 15rpx;
+}
+
+.video-button-re{
+    background: #FA9609;
+}
+
+.video-button-done{
+    background: #FF552E;
+}
+
+.video-uploading{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    left: 0;
+    top: 0;
+    color: #fff;
+    line-height: 388rpx;
+}

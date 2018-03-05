@@ -1,0 +1,38 @@
+<view class="video-view" wx:if="{{videoPath === ''}}">
+    <view class="video-container video-container1">
+        <form report-submit="{{true}}" bindsubmit="confirmShoot">
+            <navigator class="camera-hdgz" url="../activity/activity">
+                <image class="camera-hdgz-img" src="../../assets/image/camera-hdgz.png"></image>
+            </navigator>
+            <image class="camera-icon" src="../../assets/image/camera-icon.png" />
+            <view class="shoot-text">立即拍摄赢取2018元大奖</view>
+            <button form-type="submit" bindtap="shoot" class="video-button shoot-button">立即拍摄</button>
+        </form>
+
+        <view class="video-uploading" wx:if="{{uploading}}">
+            {{progress}}%
+            上传中
+        </view>
+    </view>
+</view>
+
+<view class="video-view" wx:if="{{videoPath !== ''}}">
+    <form report-submit="{{true}}" bindsubmit="confirmUpload">
+        <view class="video-container">
+            <video class="video-tag" src="{{videoTmpPath}}"
+                controls="{{true}}" event-model="bubble">
+            </video>
+        </view>
+
+        <view class="video-title">
+            <textarea name="videoTitle" maxlength="20" class="video-title-ta" placeholder="一句话描述小视频" placeholder-style="font-weight: 200;color: #ccc;" bindinput="checkLimit"
+                ></textarea>
+                <view class="word-limit">{{wordsNum || 0}}/20</view>
+        </view>
+
+        <view class="video-option">
+            <button bindtap="reUpload" class="video-button video-button-re">重新录制</button>
+            <button form-type="submit" class="video-button video-button-done">完成</button>
+        </view>
+    </form>
+</view>

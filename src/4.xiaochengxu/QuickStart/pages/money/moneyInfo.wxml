@@ -1,0 +1,17 @@
+<view class="money-view" wx:if="{{list.length > 0}}">
+    <view class="money-li" wx:for="{{list}}">
+        <view class="money-time">{{item.createtime}}
+            <view class="money-right"></view>
+        </view>
+        <view class="money-detail">{{item.remark}}
+            <view class="money-right">{{item.state == '1' ? '+' : '-'}}{{item.money}}</view>
+        </view>
+    </view>
+</view>
+
+<view class="money-view" wx:if="{{list.length == 0}}">
+    <view class="noMsg">
+        <image class="noMsg-image" src="../../assets/image/empty.png"/>
+        <view class="noMsg-view">暂时还没有内容哦~</view>
+    </view>
+</view>

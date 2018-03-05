@@ -1,0 +1,56 @@
+<!--pages/activity/activity.wxml-->
+<view wx:if='{{VideoCount===0}}' class='mod-view mod-activity'>
+  <navigator class='mod-activity-open' hover-class='none' url='/pages/camera/camera' open-type='switchTab'>
+    <block wx:if='{{openActivity===false}}'>
+      <view class="activeTitle">拍短视频！晒宠物！赢大奖！</view>
+      <view class="activeCountDown">
+        开奖倒计时
+        <text class="time">{{Countdown[0]}}</text>天
+        <text class="time">{{Countdown[1]}}</text>:
+        <text class="time">{{Countdown[2]}}</text>:
+        <text class="time">{{Countdown[3]}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="activeTitle">拍短视频！晒宠物！赢大奖！</view>
+      <view class="activeCountDown activityEnd">活动已经结束</view>
+    </block>
+  </navigator>
+  <navigator url='/pages/camera/camera' open-type='switchTab' hover-class='none' class='mod-join-us'>立即参赛</navigator>
+</view>
+<view wx:else class='mod-view mod-activity rightnow-share'>
+  <button wx:if='{{VideoCount===1}}' hover-class='none' class='mod-activity-open' open-type='share'>
+      <block wx:if='{{openActivity===false}}'>
+      <view class="activeTitle">拍短视频！晒宠物！赢大奖！</view>
+      <view class="activeCountDown">
+        开奖倒计时
+        <text class="time">{{Countdown[0]}}</text>天
+        <text class="time">{{Countdown[1]}}</text>:
+        <text class="time">{{Countdown[2]}}</text>:
+        <text class="time">{{Countdown[3]}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="activeTitle">拍短视频！晒宠物！赢大奖！</view>
+      <view class="activeCountDown activityEnd">活动已经结束</view>
+    </block>
+  </button>
+  <navigator wx:if='{{VideoCount>1}}' class='mod-activity-open' hover-class='none' url='/pages/myWorks/myWorks' open-type='navigate'>
+    <block wx:if='{{openActivity===false}}'>
+      <view class="activeTitle">拍短视频！晒宠物！赢大奖！</view>
+      <view class="activeCountDown">
+        开奖倒计时
+        <text class="time">{{Countdown[0]}}</text>天
+        <text class="time">{{Countdown[1]}}</text>:
+        <text class="time">{{Countdown[2]}}</text>:
+        <text class="time">{{Countdown[3]}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="activeTitle">拍短视频！晒宠物！赢大奖！</view>
+      <view class="activeCountDown activityEnd">活动已经结束</view>
+    </block>
+  </navigator>
+  <button wx:if='{{VideoCount===1}}' class='mod-join-us' open-type='share'>分享集赞</button>
+  <navigator wx:if='{{VideoCount>1}}' url='/pages/myWorks/myWorks' open-type='navigate' hover-class='none' class='mod-join-us'>分享集赞</navigator>
+</view>

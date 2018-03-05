@@ -1,25 +1,56 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/activity/activity",
+    "pages/camera/camera",
+    "pages/center/center",
+    "pages/detail/detail",
+    "pages/found/found",
+    "pages/my/my",
+    "pages/myPrize/myPrize",
+    "pages/mySense/mySense",
+    "pages/myMsgs/myMsgs",
+    "pages/msgDetail/msgDetail",
+    "pages/ranking/ranking",
+    "pages/rankingArea/rankingArea",
+    "pages/sharecircle/sharecircle",
+    "pages/report/report",
+    "pages/regist/regist",
+    "pages/myWorks/myWorks",
+    "pages/money/money",
+    "pages/money/moneyInfo"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "走商",
-    "navigationBarTextStyle":"black"
-  },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/logs/logs",
-      "text": "日志"
-    }]
-    ,"borderStyle": "white",
-    "position":"top",
-    "selectedColor":"red"
+    "color": "#7A7E83",
+    "selectedColor": "#FF552E",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/image/tabbar-index.png",
+        "selectedIconPath": "assets/image/tabbar-index1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/camera/camera",
+        "iconPath": "assets/image/tabbar-faBu.png",
+        "selectedIconPath": "assets/image/tabbar-faBu.png",
+        "text": "拍摄"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "assets/image/tabbar-my.png",
+        "selectedIconPath": "assets/image/tabbar-my1.png",
+        "text": "我的"
+      }
+    ]
   },
-  "debug":true
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#FEE2E5F",
+    "navigationBarBackgroundColor": "#FF2D73",
+    "navigationBarTitleText": "百万萌宠",
+    "navigationBarTextStyle": "white"
+  }
 }

@@ -1,0 +1,133 @@
+/* pages/mySense/mySense.wxss */
+
+/* 列表为空的情况 */
+.box-empty {
+    width: 339rpx;
+    margin-top: 280rpx;
+    margin-left: 206rpx;
+    margin-right: 205rpx;
+}
+
+.box-empty .img-empty {
+    width: 339rpx;
+    height: 278rpx;
+    display: block;
+}
+
+.box-empty .text-empty {
+    margin-top: 58rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #BDBDBD;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.third-one {
+    width: 33.3333%;
+}
+
+.flex-wrp {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 关注列表 */
+.box-followlist {
+    padding: 0 30rpx 20rpx;
+}
+
+/* 单个关注item */
+.box-follow {
+    width: 690rpx;
+    height: 264rpx;
+    margin-top: 20rpx;
+    padding: 30rpx;
+    border-radius: 20rpx;
+    background: #FFFFFF;
+    box-shadow: 0 0 12rpx 0 rgba(51, 51, 51, 0.47);
+    position: relative;
+}
+
+/* 信息框，包括头像 */
+.box-follow .box-info {
+    display: flex;
+}
+
+.box-follow .img-follow {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+
+    margin-right: 30rpx;
+}
+
+/* 宠物信息 */
+.box-follow .box-petinfo {
+}
+
+/* 宠物名 */
+.box-petinfo .petname {
+    height: 48rpx;
+    margin-bottom: 10rpx;
+}
+
+/* 更多信息 */
+.box-petinfo .moreinfo {
+    width: 267rpx;
+    height: 37rpx;
+}
+
+.moreinfo-item {
+    display: inline-block;
+    text-align: center;
+}
+
+/* 让第一个item做对齐，最后一个item右对齐 */
+.moreinfo-item.left {
+    text-align: left;
+}
+
+.moreinfo-item.right {
+    text-align: right;
+}
+
+/* 萌宠号 */
+.box-follow .petnumber {
+    width: 265rpx;
+    height: 56rpx;
+    border: 1rpx solid #E8BC7F;
+    border-radius: 30rpx;
+    background: #FFF9D8;
+    text-align: center;
+    position: absolute;
+    right: 21rpx;
+    bottom: 31rpx;
+}
+
+/* 字体 */
+.box-follow .petname-font {
+    font-family: PingFangSC-Semibold;
+    font-size: 34rpx;
+    color: #333333;
+    letter-spacing: 0.51rpx;
+    line-height: 48rpx;
+}
+
+.box-follow .moreinfo-font {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #999999;
+    letter-spacing: 0;
+    line-height: 37rpx;
+}
+
+.box-follow .petnumber-font {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #C48A38;
+    letter-spacing: 0;
+    line-height: 56rpx;
+}
+
+

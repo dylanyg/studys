@@ -1,0 +1,35 @@
+<!--pages/report/report.wxml-->
+<view wx:if='{{!showSuccess}}' class='mod-report'>
+  <view class='mod-edit-wrap content-wrap'>
+    <view class='content-title'>请选择您遇到的问题</view>
+    <view class='content-tags'>
+      <view wx:for='{{model.tags}}' wx:key='index' bindtap='setType' data-index='{{index}}' class='content-tag {{item.checked?"content-tag-focus":""}}'>{{item.text}}</view>
+    </view>
+    <view class='content-text-warp'>
+      <textarea class='content-text-area' maxlength='100' bindinput='checkContent' bindblur='setContent' placeholder-class='contect-text-placeholder' placeholder='请详细描述问题'></textarea>
+      <view class='text-counter'>{{contentLength}}/100</view>
+    </view>
+  </view>
+
+  <view class='mod-edit-wrap upload-wrap'>
+    <view class='upload-title'>上传凭证（最多9张）</view>
+    <view class='upload-img-wrap'>
+      <image wx:for='{{model.tempImg}}' mode='aspectFill' wx:key='index' class='upload-img upload-img-cancel' src='{{item.localImg}}' data-index='{{index}}' bindtap='onCancelImage'></image>
+      <button wx:if='{{model.tempImg.length<9}}' disabled='{{uploading}}' class='upload-img upload-img-add' bindtap='onUploadHander'></button>
+    </view>
+  </view>
+  <view wx:if='{{model.showTel}}' class='mod-edit-mobile'>
+    <text class='mobile-label'>联系方式</text>
+    <input class='mobile-entry' bindblur='setMobile'  placeholder-class='mobile-entry-placeholder' placeholder='输入手机号码' maxlength='11' type='number' cursor-spacing='15'></input>
+  </view>
+  <button class='mod-report-submit' bindtap='onSubmitHandler'>提交</button>
+</view>
+<view wx:if='{{showSuccess}}' class='mod-report-success'>
+  <view class='mod-success-inner'>
+    <image class='success-icon' mode='aspectFill' src='data:image/png;base64,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'></image>
+    <view class='success-intro'>提交成功</view>
+    <view wx:if='{{model.action==="report"}}' class='success-desc'>我们已经收到您的举报，工作人员会迅速核实视频，一旦发现违规将立即删除，感谢您的举报！</view>
+    <view wx:else class='success-desc'>您的反馈是对产品最大支持，我们会尽快处理您的问题，请保持联系方式畅通</view>
+  </view>
+  <navigator class='back-home' hover-class='none' url='/pages/index/index' open-type='switchTab'>返回首页</navigator>
+</view>

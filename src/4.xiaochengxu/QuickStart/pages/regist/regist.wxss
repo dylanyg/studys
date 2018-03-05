@@ -1,0 +1,110 @@
+/* pages/regist/regist.wxss */
+/*main view*/
+.pet-view{
+    background:#F3F3F3;
+}
+/*left con common style*/
+.pet_base{
+    width:220rpx;
+    font-size:34rpx;
+}
+/*every item common style*/
+.pet_base_con{
+    padding:0 30rpx;
+    background: #FFFFFF;
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #333333;
+    letter-spacing: 0;
+    display:flex;
+    flex-direction: row;
+    border-bottom:1rpx solid #F3F3F3;
+}
+/*text commom style*/
+.base_text{
+    color:#333333;
+    flex:1;
+    text-align:right;
+    height:88rpx;
+    font-size: 34rpx;
+}
+/*choose one common style*/
+.base_select{
+    text-align: right;
+    flex: 1;
+}
+/*btn commom style*/
+.base_btn{
+    display: inline-block;
+    font-size:28rpx;
+    width:124rpx;
+    height:46rpx;
+    line-height: 46rpx;
+    background: #FFFFFF;
+    border: 1rpx solid #CCCCCC;
+    border-radius: 32rpx;
+    padding:0;
+}
+.base_btn_curr{
+    background: #FF552E;
+    border-color: #FF552E;
+    color: #fff;
+}
+
+/*set btn margin*/
+.btn_margin{
+    margin-left:20rpx;
+    margin-top:20rpx;
+}
+/*set text margin*/
+.text_margin{
+    margin-top:20rpx;
+}
+/*pet_picture*/
+.pet_picture-con{
+    margin-top:20rpx;
+    margin-bottom:20rpx;
+    height: 110rpx;
+    font-size:34rpx;
+    line-height: 110rpx;
+}
+.set_image{
+    border-radius:36rpx;
+    margin-top:19rpx;
+    width:72rpx;
+    height:72rpx;
+}
+.choose_pic{
+    margin-bottom: 22rpx;
+    margin-left:28rpx;
+    display:inline-block;
+    width:16rpx;
+    height:26rpx;
+}
+/*pet-name*/
+.pet_nick_con{
+    margin-top:20rpx;
+    font-size:34rpx;
+}
+/*pet type*/
+
+/*pet area*/
+.pet_area_con{
+    font-size:34rpx;
+}
+/*pet introduce*/
+.one_words_con{
+    padding-bottom:174rpx;
+}
+
+/*submit btn*/
+.submit_btn{
+    margin-top:20rpx;
+    height:100rpx;
+    font-size:36rpx;
+    padding:0;
+    line-height: 100rpx;
+    font-family: PingFangSC-Regular;
+    color: #000000;
+    background: #FFFFFF;
+}

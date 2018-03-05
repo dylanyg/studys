@@ -1,0 +1,102 @@
+<!--pages/center/center.wxml-->
+<view class='mod-pet-card {{haveCard?"show":""}}'>
+  <view class='mod-my-card'>
+    <view class='mod-my-bg'></view>
+    <view class="mod-my-intro">
+      <view class='row-my-info {{showEdit?"":"row-other-info"}}'>
+        <navigator wx:if='{{showEdit}}' hover-class='none' class='column column-my-edit' url='/pages/regist/regist?id={{CenterCard.userCenterVO.pet.id}}'>编辑</navigator>
+        <view class='column-my-base'>
+          <view class="mod-my-center-wrap">
+            <image class='mod-my-photo' mode="aspectFill" src='{{CenterCard.userCenterVO.pet.portrait?CenterCard.userCenterVO.pet.portrait+"?w=100":""}}'></image>
+            <text class='mod-my-pet-number'>萌宠号:{{CenterCard.userCenterVO.pet.code}}</text>
+          </view>
+          <view class='mod-my-nickname'>{{CenterCard.userCenterVO.pet.name }}</view>
+          <view class='mod-my-pet-status'>
+            <text>{{CenterCard.userCenterVO.pet.sterilization==0?'已绝育':'未绝育' }}</text>
+            <text>{{CenterCard.userCenterVO.pet.age}}岁</text>
+            <text>{{CenterCard.userCenterVO.pet.weight }}KG</text>
+            <text>{{CenterCard.userCenterVO.pet.birdthShow}}</text>
+          </view>
+          <view class='mod-pet-desc'>{{CenterCard.userCenterVO.pet.summary}}</view>
+        </view>
+        <view wx:if='{{showEdit}}' bindtap='onShowShareSheet' class='column column-my-share'>
+          <view class='my-share-icon'></view>
+        </view>
+      </view>
+      <view class='row row-my-sum'>
+        <view class='column column-my-sum column-split'>
+          <text class='mod-my-sum-val'>{{CenterCard.focusCount||0}}</text>
+          <text class='mod-my-sum-name'>被关注</text>
+        </view>
+        <view class='column column-my-sum column-split'>
+          <text class='mod-my-sum-val'>{{CenterCard.visitCount||0 }}</text>
+          <text class='mod-my-sum-name'>播放量</text>
+        </view>
+        <view class='column column-my-sum'>
+          <text class='mod-my-sum-val'>{{CenterCard.voteCount||0  }}</text>
+          <text class='mod-my-sum-name'>被点赞</text>
+        </view>
+      </view>
+      <navigator url='/pages/camera/camera' open-type='switchTab' wx:if='{{showEdit}}' class='row row-my-upload' hover-class='none'>上传作品</navigator>
+      <view wx:elif='{{isFocus===true}}' bindtap='onSenseHandler' class='row row-my-upload haved-sense'>已关注</view>
+      <view wx:else bindtap='onSenseHandler' class='row row-my-upload'>关注他</view>
+    </view>
+  </view>
+  <view wx:if='{{openActivity && CenterCard.userCenterVO.cityRank<101 && CenterCard.userCenterVO.cityRank>0}}' class="mod-my-honor">
+    <view class='mod-my-honor-head'>所获荣誉</view>
+    <view class='row mod-my-honor-container'>
+      <view class='column column-my-honor mod-my-honor-area'>
+        <text class='mod-my-honor-name'>{{CenterCard.userCenterVO.pet.city}}排行榜</text>
+        <text wx:if='{{CenterCard.userCenterVO.cityRank==-1}}' class='mod-my-honor-rank'>没有排名</text>
+        <text wx:else class='mod-my-honor-rank'>第{{CenterCard.userCenterVO.cityRank }}名</text>
+      </view>
+      <view class='column column-my-honor mod-my-honor-all'>
+        <text class='mod-my-honor-name'>全国排行榜</text>
+        <text wx:if='{{CenterCard.userCenterVO.countryRank==-1}}' class='mod-my-honor-rank'>没有排名</text>
+        <text wx:else class='mod-my-honor-rank'>第{{CenterCard.userCenterVO.countryRank }}名</text>
+      </view>
+    </view>
+  </view>
+  <view class="mod-my-works">
+    <block wx:if='{{CenterCard.videos && CenterCard.videos.length>0}}'>
+      <view class='mod-my-works-head'>
+        <text wx:if='{{showEdit}}'>我的作品</text>
+        <text wx:else>他的作品</text>
+        <navigator wx:if='{{CenterCard.videos || CenterCard.videos.length>0}}' class='mod-works-more' hover-class='none' url='/pages/myWorks/myWorks?petId={{showEdit==false?CenterCard.userCenterVO.pet.id:""}}' open-type='navigate'>更多</navigator>
+      </view>
+      <view class='mod-my-works-list'>
+        <navigator wx:for='{{CenterCard.videos}}' wx:key='index' class='mod-my-works-li' url='/pages/detail/detail?id={{item.videoId}}' open-type='navigate' wx:if='{{index<6}}'>
+          <image class='mod-my-work-img' src='{{item.portrait||videoDefault}}?w=372' mode='aspectFill'></image>
+          <view class='mod-my-work-intro'>{{item.summary}}</view>
+          <view class='mod-my-work-dynamic'>
+            <view class='mod-my-work-play'>{{item.visit}}次播放</view>
+            <view class='mod-my-work-sense'>{{item.vote}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <view class='mod-none-works' wx:else>还没有上传作品啦</view>
+  </view>
+  <navigator class='back-home' hover-class='none' url='/pages/index/index' open-type='switchTab'>返回首页</navigator>
+</view>
+<view class='mod-my-none {{(!haveCard&& haveCard!==undefined)?"show":""}}'>
+  <view class='mod-my-none-card'>
+    <view class='mod-my-bg'></view>
+    <view class='mod-none-card-wrap'>
+      <view class='mod-none-card-text'>您还未添加宠物卡</view>
+      <view class='mod-none-card-tip'>赶快添加宠物卡，上传视频赢大奖吧！</view>
+      <navigator url='/pages/regist/regist' open-type='navigate' class='mod-none-card-add' hover-class='none'>去添加宠物卡</navigator>
+    </view>
+  </view>
+  <view class='mod-none-card-note'>
+    <view>参赛提示：</view>
+    <view class='mod-none-card-note2'>您需要先给您的宠物添加一张宠物卡，然后上传或拍摄一个您的宠物的小视频，上传视频后就自动参赛了</view>
+  </view>
+</view>
+<view class='mod-share-task {{showShareMenu?"show":""}}'>
+</view>
+<view class='mod-share-menu {{showShareMenu?"show":""}}'>
+  <button class='share-menu-item' open-type='share' bindtap='onCancelShareSheet'>分享给好友</button>
+  <navigator class='share-menu-item share-circle-item' hover-class='none' bindtap='onCancelShareSheet' url='/pages/sharecircle/sharecircle?petId={{CenterCard.userCenterVO.pet.id}}' open-type='navigate'>分享到朋友圈</navigator>
+  <button class='share-menu-item share-menu-cancel' bindtap='onCancelShareSheet'>取消</button>
+</view>

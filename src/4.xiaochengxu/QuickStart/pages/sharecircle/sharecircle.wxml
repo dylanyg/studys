@@ -1,0 +1,21 @@
+<!--pages/sharecircle/sharecircle.wxml-->
+<view class='mod-view'>
+   <!-- <view class='mod-card' bindlongpress='longTapShare' data-uri='{{PetCard}}'>
+    <view class='mod-pet-card'>
+      <view class="column mod-center-wrap">
+        <image class='mod-my-photo' mode="aspectFill" src='https://pic4.58cdn.com.cn/vip/portal/pic/n_s02681677486575711156.jpg'></image>
+        <view class='mod-my-pet-number'>萌宠号:58000012</view>
+      </view>
+      <view class='mod-my-nickname'>Verna Sanders</view>
+      <view class='row mod-my-pet-status'>
+        <text>已绝育</text>
+        <text>1岁</text>
+        <text>20KG</text>
+      </view>
+    </view>
+    <image class='mod-share-qrcode'  src='{{PetCard}}' ></image>
+    <view class='mod-share-tip'>长按扫码为他点赞</view>
+    <view class='mod-share-more'>更多萌宠视频尽在百万萌宠，赶快来看哦</view>
+  </view>  -->
+   <image class='mod-pet-card-photo' mode='scaleToFill' src='{{PetCard}}' bindlongpress='longTapShare' data-uri='{{PetCard}}'></image> 
+</view>

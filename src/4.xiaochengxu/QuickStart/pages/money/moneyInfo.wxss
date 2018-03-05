@@ -1,0 +1,47 @@
+.money-no{
+    line-height: 108rpx;
+    text-align: center;
+}
+
+.money-li{
+    width: 720rpx;
+    height: 168rpx;
+    border-bottom: solid 1px #f3f3f3;
+    margin-left: 30rpx;
+    padding: 39rpx 30rpx 0 0;
+}
+
+.money-time{
+    font-size: 24rpx;
+    color: #999999;
+    height: 33rpx;
+    line-height: 33rpx;
+}
+
+.money-right{
+    float: right;
+}
+
+.money-detail{
+    height: 45rpx;
+    line-height: 45rpx;
+    margin-top: 8rpx;
+}
+
+.noMsg{
+    font-size:28rpx;
+    color:#999;
+    text-align: center;
+    padding:30rpx;
+    line-height:30rpx;
+}
+.noMsg-image{
+    width: 338rpx;
+    height: 282rpx;
+    margin-top: 250rpx;
+}
+.noMsg-view{
+    font-size: 28rpx;
+    color: #BDBDBD;
+    margin-top: 58rpx;
+}

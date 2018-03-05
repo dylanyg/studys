@@ -1,0 +1,17 @@
+<!--pages/money/money.wxml-->
+<view class="money-view">
+    <view class="view-bg"></view>
+
+    <view class="money-info">
+        <view class="small-gray">账户余额(元)</view>
+        <view class="big-money">￥{{balance}}</view>
+        <navigator url="./moneyInfo">
+            <view class="money-detail">资金明细 ></view>
+        </navigator>
+        <form report-submit="{{true}}" bindsubmit="confirm">
+            <button wx:if="{{balance}}" form-type="submit" bindtap="moneyPocket" class="money-pocket">全部提现</button>
+            <button wx:else form-type="submit" class="money-pocket money-pocket-none">全部提现</button>
+        </form>
+        <view class="small-gray">提现到微信钱包，预计1-5个工作日到账</view>
+    </view>
+</view>

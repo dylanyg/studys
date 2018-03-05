@@ -1,0 +1,49 @@
+<!--pages/ranking/ranking.wxml-->
+<view class="body">
+    <view class="container ranking-container" scroll-y="true" enable-back-to-top="false">
+        <view class="ranking-banner">
+            <image class="ranking-bannerT" src="https://static.58.com/lbg/mengchong/image/bannerT.png?w=750" mode="widthFix"/>
+            <image class="ranking-bannerB" src="https://static.58.com/lbg/mengchong/image/bannerB.png?w=750" mode="widthFix"/>
+        </view>
+        <view wx:if="{{petRank == 1}}" class="ranking ranking-mypet">
+            <image class="ranking-mypet-avatar" mode="aspectFill" src="{{mypetRank.portrait}}?w=100"/>
+            <text class="ranking-mypet-name">{{mypetRank.name}}</text>
+            <view class="ranking-mypet-reveal">
+                <view class="ranking-mypet-reveal-detail">
+                    <view class="reveal-detail-first">{{mypetRank.rank}}</view>
+                    <view class="reveal-detail-last">全国排名</view>
+                </view>
+                <view class="ranking-mypet-reveal-detail">
+                    <view class="reveal-detail-first">{{mypetRank.arearank}}</view>
+                    <view class="reveal-detail-last">本地排名</view>
+                </view>
+                <view class="ranking-mypet-reveal-detail myVote">
+                    <view class="reveal-detail-first">{{mypetRank.vote}}</view>
+                    <view class="reveal-detail-last">已获得赞</view>
+                </view>
+            </view>
+            <button wx:if="{{mypetRank.videonum == 1}}" open-type="share" class="ranking-mypet-attend">分享集赞</button>
+            <navigator wx:elif="{{mypetRank.videonum > 1 }}" url="/pages/myWorks/myWorks" class="ranking-mypet-attend" hover-class="none">分享集赞</navigator>
+        </view>
+        <view wx:elif="{{petRank == 0}}" class="ranking ranking-mypet">
+            <image src="https://static.58.com/lbg/mengchong/image/rank_none.png?w=60" mode="aspectFill" class="ranking-mypet-nonepic" />
+            <text class="ranking-mypet-nonetext">您当前还没有排名</text>
+            <view wx:if="{{havePetCard}}" class="ranking-mypet-attend ranking-mypet-top" bindtap="switchCamera">去参加赢大奖</view>
+            <navigator wx:elif="{{!havePetCard}}" url="/pages/center/center" class="ranking-mypet-attend ranking-mypet-top">去参加赢大奖
+            </navigator>
+        </view>
+        <view wx:for="{{rankList}}" wx:for-item="rankItem" wx:key="{{rankItem.city}}" wx:if="{{rankItem.data.length > 0}}" class="ranking ranking-list">
+            <text class="ranking-list-title">{{rankItem.city}}</text>
+            <view class="ranking-list-ahead">
+                <navigator url="/pages/center/center?petId={{rankPet.id}}" hover-class="none" wx:for="{{rankItem.data}}" wx:for-item="rankPet" wx:if="{{index <= 4}}" class="ranking-list-pet num{{rankPet.rank}}">
+                    <view>
+                        <image class="ranking-list-pet-image pet-image{{rankPet.rank}}" mode="aspectFill" src="{{rankPet.portrait}}?w=100"/>
+                    </view>
+                </navigator>
+            </view>
+            <navigator url="/pages/rankingArea/rankingArea?cityName={{rankItem.city}}" class="ranking-list-more" wx:if="{{rankItem.data.length > 4}}" hover-class="none">
+                <text class="ranking-list-more-txt">更多</text>
+            </navigator>
+        </view>
+    </view>
+</view>

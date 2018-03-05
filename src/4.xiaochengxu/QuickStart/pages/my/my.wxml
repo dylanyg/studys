@@ -1,0 +1,34 @@
+<!--pages/my/my.wxml-->
+<view class='mod-view mod-my'>
+  <view class='mod-card-bg'></view>
+  <view class='mod-my-card'>
+    <image class='mod-my-photo' mode='aspectFill' src='{{userCenter.userImg}}'></image>
+    <view class='mod-my-intro'>
+      <view class='mod-my-nickname'>{{userCenter.username}}</view>
+      <view wx:if='{{userCenter.pet}}' class='mod-my-pet-count'>已有1只宠物</view>
+      <view wx:else class='mod-my-pet-count'>村长</view>
+    </view>
+  </view>
+  <view class='mod-my-container'>
+    <view class='mod-my-list'>
+      <navigator class='mod-my-list-li' hover-class='none' url='/pages/center/center'>
+        <view class="mod-my-menu mod-my-menu-pet">我的单子</view>
+      </navigator>
+      <navigator class='mod-my-list-li' hover-class='none' url='/pages/myWorks/myWorks' open-type='navigate'>
+        <view class="mod-my-menu mod-my-menu-works">我的贡献</view>
+      </navigator>
+      <navigator class='mod-my-list-li' hover-class='none' url='/pages/money/money' open-type='navigate'>
+        <view class="mod-my-menu mod-my-menu-money">我的资金</view>
+      </navigator>
+      <navigator class='mod-my-list-li' hover-class='none' url='/pages/myMsgs/myMsgs' open-type='navigate'>
+        <view class="mod-my-menu mod-my-menu-msg">我的消息</view>
+        <view wx:if='{{userCenter.unreadMessageCount>0}}' class='my-message-count'>{{userCenter.unreadMessageCount}}</view>
+      </navigator>
+    </view>
+    <view class="mod-my-setting">
+      <navigator class='mod-my-list-li' hover-class='none' url='/pages/report/report?action=feedback' open-type='navigate'>
+        <view class="mod-my-menu mod-my-menu-setting">意见反馈</view>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<!--pages/myWorks/myWorks.wxml-->
+<!-- 顶部按钮 -->
+<view class="btn-list btn-list-font{{isEditing ? ' btn-list-editing' : ''}}" wx:if="{{isOwner}}">
+    <button class="btn-top btn-left" bindtap="bindEdit" wx:if="{{!isEditing}}">编辑</button>
+    <button class="btn-top btn-right" bindtap="turnToUploadVideo" wx:if="{{!isEditing}}">上传作品</button>
+    <button class="btn-top btn-left" bindtap="cancel" wx:if="{{isEditing}}">取消</button>
+    <button class="btn-top btn-right" bindtap="turnToUploadVideo" wx:if="{{isEditing}}">上传视频</button>
+</view>
+<view class="sharebox sharebox-font" wx:else>
+    <image class="avator item" src="{{userImg + '?w=78'}}" mode="aspectFill"></image>
+    <view class="detail item">
+        <view class="username">{{username}}</view>
+        <view class="more">去邀请你的好友一起来参赛</view>
+    </view>
+     <view class="share-btns item">
+        <button class="btn-share follow" bindtap="bindFocus">{{isFocused ? '已关注' : '加关注'}}</button>
+        <button class="btn-share share" open-type="share" bindtap="bindShareBtn">分享</button>
+    </view> 
+</view>
+
+<!-- 列表为空时 -->
+<view class="box-empty" wx:if="{{isEmpty}}">
+    <image class="img-empty" src="https://static.58.com/lbg/mengchong/image/empty-work.png"></image>
+    <view class="text-empty">居然什么都没有~</view>
+</view>
+
+<!-- 作品列表 -->
+<view class="flex-wrp work-font" wx:else>
+    <!-- 单个作品 -->
+    <view wx:for="{{worksArr}}" class="box-work flex-item{{item.checked ? ' box-work-checked' : ''}}">
+        <image class="img-work" src="{{item.portrait ? item.portrait + '?w=372' : 'https://static.58.com/lbg/mengchong/image/element/video-default.png'}}" mode="aspectFill" data-id="{{item.videoId}}" bindtap="turnToVideoDetail"></image>
+        <view class="box-work-info">
+            <view class="work-title">{{item.summary}}</view>
+            <view class="work-info">
+                <view class="play-count">
+                    <view class="icon play"></view>
+                    {{item.visit}}次播放
+                </view>
+                <view class="follow-num">
+                    <view class="icon vote"></view>
+                    {{item.vote}}
+                </view>
+            </view>
+        </view>
+        <image class="checkbox" src="{{item.checked ? 'https://static.58.com/lbg/mengchong/image/mywork-checked.png' : 'https://static.58.com/lbg/mengchong/image/mywork-unchecked.png'}}" wx:if="{{isEditing}}"></image>
+        <!-- 蒙版 -->
+        <view class="mask" bindtap="selectWork" data-index="{{index}}" wx:if="{{isEditing}}"></view>
+    </view>
+    <button class="delete" bindtap="delItems" wx:if="{{isEditing}}">删除</button>
+</view>

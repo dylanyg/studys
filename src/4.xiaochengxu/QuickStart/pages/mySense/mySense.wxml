@@ -1,0 +1,32 @@
+<!--pages/mySense/mySense.wxml-->
+<!-- 列表为空的时候 -->
+<!-- 列表为空时 -->
+<view class="box-empty" wx:if="{{isEmpty}}">
+    <image class="img-empty" src="https://static.58.com/lbg/mengchong/image/empty.png"></image>
+    <view class="text-empty">暂时还没有内容哦~</view>
+</view>
+
+<!-- 关注列表 -->
+<view class="box-followlist flex-wrp" wx:else>
+    <!-- 单个关注 -->
+    <view class="flex-item box-follow" wx:for="{{followsArr}}" data-id="{{item.petId}}" bindtap="turnToCenter">
+        <!-- 宠物卡基本信息 -->
+        <view class="box-info">
+            <image class="img-follow" mode="aspectFill" src="{{item.portrait + '?w=100'}}"></image>
+            <view class="box-petinfo">
+                <!-- 宠物名 -->
+                <view class="petname petname-font">{{item.name}}</view>
+                <!-- 宠物其他信息 -->
+                <view class="moreinfo moreinfo-font">
+                    <view class="moreinfo-item left third-one">{{item.sterilization ? '未绝育' : '已绝育'}}</view>
+                    <view class="moreinfo-item third-one">{{item.year}}岁</view>
+                    <view class="moreinfo-item right third-one">{{item.weight}}KG</view>
+                </view>
+            </view>
+        </view>
+        <!-- 萌宠号 -->
+        <view class="petnumber petnumber-font">
+            萌宠号:{{item.code}}
+        </view>
+    </view>
+</view>

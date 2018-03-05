@@ -1,0 +1,15 @@
+<!--pages/myMsgs/myMsgs.wxml-->
+<view class="container myMsg-container" scroll-y="true" enable-back-to-top="true">
+    <view wx:if="{{haveMsg}}" class="myMsg-list">
+        <navigator wx:for="{{msgList}}" wx:key="{{item.messageId}}" url="../msgDetail/msgDetail?messageId={{item.messageId}}" class="myMsg-li" hover-class="none">
+            <view class="myMsg-li-notice">
+                <text class="inform">系统通知</text><text class="time">{{item.createtime}}</text>
+            </view>
+            <text class="myMsg-li-title">{{item.title}}</text>
+        </navigator>
+    </view>
+    <view wx:elif="{{!haveMsg}}" class="noMsg">
+        <image class="noMsg-img" src="../../assets/image/empty.png"/>
+        <view class="noMsg-txt">暂时还没有内容哦~</view>
+    </view>
+</view>

@@ -1,0 +1,136 @@
+/* pages/found/found.wxss */
+page{
+    height: 100%;
+}
+view{
+    background: white;
+}
+.scrll-box{
+    width: 100%;
+    overflow: hidden;
+    height: 97rpx;
+}
+.scroll-view{
+    height: 88rpx;
+    font-size: 0;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+}
+.tabs{
+    display: inline-block;
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular;
+    color: #666666;
+    margin-right:75rpx;
+    line-height: 80rpx;
+}
+.active{
+    position: relative;
+    color: #FF552E;
+}
+.active ::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    left:50%;
+    margin-left: -29rpx;
+    width:60rpx;
+    height: 6rpx;
+    background:#FF552E;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 100%;
+    min-height: 110%;
+}
+.vbox{
+    width: 49.6%;
+    height: 338rpx;
+    font-size: 0;
+    padding-bottom: 40rpx;
+    background: white;
+}
+.vimg{
+    width: 100%;
+    height: 210rpx;
+}
+.vtitle{
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 68rpx;
+    padding: 0 21rpx;
+    text-overflow:ellipsis;
+    width: 330rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+.vtipcontainer{
+    font-size: 24rpx;
+    color: #999999;
+    padding: 0 10rpx 0 21rpx;
+    justify-content:space-between;
+    align-items: center;
+    display: flex;
+}
+.vxin{
+    width: 20rpx;
+    height: 20rpx;
+}
+.vcount{
+    padding: 0 8rpx;
+}
+.vtip{
+    flex: 1;
+    line-height: 10rpx
+}
+.aling-right{
+    text-align: right;
+}
+.loading{
+    background: #f6f6f6;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 30rpx 0;
+    align-items: center
+}
+.loading-text{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #BDBDBD;
+    margin-left: 10rpx;
+}
+.loading-img{
+    width:24rpx;
+    height: 24rpx;
+}
+.empty{
+    padding: 192rpx 0 0 0;
+    width: 100%;
+}
+.empty-img{
+    width: 339rpx;
+    height: 277rpx;
+    display: block;
+    margin: 0 auto;
+}
+.empty-text{
+    display: block;
+    font-size: 28rpx;
+    color: #BDBDBD;
+    text-align: center;
+    margin-top: 58rpx;
+}
+.four-tabs{
+    width:25%;
+    text-align: center;
+    margin: 0 !important;
+
+}

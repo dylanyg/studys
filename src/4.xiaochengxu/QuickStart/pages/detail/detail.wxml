@@ -1,0 +1,98 @@
+<!--pages/detail/detail.wxml-->
+<view class="wrap">
+    <!-- 邀请卡片 -->
+    <view class="inviteBox">
+        <image class="petAvatar" src="{{ petInfo.portrait ? petInfo.portrait + '?w=100' : defaultSrc }}" mode="aspectFill"></image>
+        <view class="invetor">
+            <text class="title">百万萌宠大比拼</text>
+            <view class="slogen">拍视频！赢取大奖！</view>
+        </view>
+        <form report-submit="{{true}}" bindsubmit="confirm">
+            <button form-type="submit" class="toGame" wx:if="{{!isCurrentUser}}" bindtap="toGame">参赛赢大奖</button>
+            <button form-type="submit" class="toInvite" wx:else open-type="share">去邀请好友</button>
+            <button form-type="submit" class="toIndex" bindtap="switchToIndex">进入首页</button>
+        </form>
+        
+    </view>
+
+    <!-- 视频播放 -->
+    <view class="videoPlay">
+        <video class="video" autoplay="{{true}}" src="{{videoSrc}}" controls bindplay="playing" bindended="playend"></video>
+    </view>
+
+    <!-- 宠物信息 -->
+    <view class="petBox">
+        <view class="petNickName">{{ videoInfo.summary }}</view>
+        <view class="focusNum">{{ visit }} 次</view>
+    </view>
+    <!-- 宠物举报、点赞、分享 -->
+    <view class="petBox petDo">
+        <form report-submit="{{true}}" class="doWithPet" bindsubmit="confirm">
+            <button form-type="submit" class="doItem jubao" bindtap="toReport">举报</button>
+            <button form-type="submit" class="doItem {{hasVote?'dianzan':''}}" bindtap="videoVote">{{ dianZanNum }}</button>
+            <button form-type="submit" class="doItem share" bindtap="showShareLog" data-type="1">分享</button>
+        </form>
+    </view>
+    <!-- 宠物身份 -->
+    <view class="petCard" wx:if="{{petInfo}}">
+        <view class="petCard-header">
+            萌宠号：{{ petInfo.code }}
+        </view>
+        <navigator class="petCard-body" url="/pages/center/center?petId={{petInfo.id}}" hover-class="none">
+            <image class="petCardAvatar" src="{{ petInfo.portrait ? petInfo.portrait +'?w=100' : '' }}" mode="aspectFill"></image>
+            <view class="petCardInfo">
+                <text class="petCardName">{{ petInfo.name }}</text>
+                <view class="petCardDetail">
+                    <view class="petCardDetail-Item">{{ petInfo.sterilization }}</view>
+                    <view class="petCardDetail-Item">{{ petInfo.year }} 岁</view>
+                    <view class="petCardDetail-Item">{{ guanzhuNum >= 0 ? guanzhuNum : 0 }} 人关注</view>
+                </view>
+            </view>
+            <form report-submit="{{true}}" bindsubmit="confirm">
+                <button form-type="submit" class="toFocus {{ hasFocus ? 'focused' : '' }}" catchtap="hasFocus" wx:if="{{!isCurrentUser}}">{{ hasFocus ? '已关注' : '关注'}}</button>
+            </form>
+        </navigator>
+    </view>
+    <!-- 视频推荐 -->
+    <view class="hotTop" wx:if="{{hotTop.length>0}}">
+        <view class="hotTop-header">视频推荐</view>
+        <view class="hotTop-body" wx:if="{{hotTop}}">
+            <navigator class="hotTop-Item" wx:for="{{hotTop}}" wx:key="hottop" url="../detail/detail?id={{item.id}}" hover-class="none">
+                <image class="itemAvatar" src="{{ item.portrait ? item.portrait +'?w=372' : defaultSrc }}" mode="aspectFill"></image>
+                <view class="petInfo">
+                    <view class="content">{{ item.summary }}</view>
+                    <view class="focusInfo">
+                        <text class="playNum">{{ item.visit }} 次播放</text>
+                        <text class="focusTime">{{ item.vote }}</text>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+        <view class="noHotTop" wx:else>
+            暂无推荐视频
+        </view>
+    </view>
+    <!-- 页脚 -->
+    <view class="footer">
+        <form report-submit="{{true}}" bindsubmit="confirm">
+            <button form-type="submit" class="toFound" bindtap="toFound">查看更多视频</button>
+        </form>
+    </view>
+</view>
+
+
+
+<!-- 分享弹窗 -->
+
+
+<!-- 蒙层 -->
+<view class="modal-mask" wx:if="{{showShareLog}}" bindtap="showShareLog" data-type="2"></view>
+<!-- 弹窗 -->
+<view class="doWith" wx:if="{{showShareLog}}">
+    <view class="doWithBtns">
+        <button open-type="share" data-type="2" bindtap="showShareLog">分享给好友</button>
+        <button bindtap="shareToCircle" >分享到朋友圈</button>
+    </view>
+    <view class="doWithCancel" bindtap="showShareLog" data-type="2">取消</view>
+</view>
+

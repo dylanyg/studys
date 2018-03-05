@@ -1,0 +1,44 @@
+/* pages/myMsgs/myMsgs.wxss */
+.container{
+    background:#F3F3F3;
+    width:750rpx;
+    height:100%;
+    box-sizing:border-box;
+    position:relative;
+}
+.msg-detail{
+    display:block;
+    background:#fff;
+}
+.msg-detail-tip{
+    font-size:28rpx;
+    color:#FD675E;
+    line-height:72rpx;
+    padding-left:30rpx;
+    background: #FFF8F7;
+    position:relative;
+}
+.msg-detail-tip:before{
+    content:'';
+    display:inline-block;
+    width:30rpx;
+    height:30rpx;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAFMN540AAAAAXNSR0IArs4c6QAAA9FJREFUSA2dV01oU0EQnt00WM9C/UPFFtTiTQWhVPAgeBChoFKlNin14qkq/hRMWkKbVioU0Yv01iSICgrixaMHxVN7FH+gf4oBc/GnrQpJ3jqz7+2+fa/vJS/ZQ3Z2Zr6d3XkzsxMAZ4hU4hORLfQjUv0Cbt4DAULEHMkW2NQKsPwROJvI7yctYExO8kek+1+LTIZLvsRrGR+WXL0Ga8rDYBMFeyeRTjxBi72upk1JBTKABzquhX1XAB7d10smrZcXqppjEgxK+rAilbwFeAgpJ0G2sJVoQyHRDUy8AuAzLJu7oYXee0k8QDbPmUeQzQOkE44U99BUANGAcArvawz8DAV9YhgcdkWcTWqB52Dx2GaWmf2nhQQRo8kzULWeuXAfxdhXls3vVlwJDgXR1S0LYHRA6euZjssxlrprWisua4BJ0DW4/UlMto8uLvkY7hL9zGfcZQBVXAlg2iwugwAdEarRMxgsIo8riRCCYVygd+oM+n7j+RRpabCCyCCvLN3FNDmN/tiB/DkQbARz8q3SUbMHjLn1BUG7lHDDHONn2VjuueJLcOQjE4qxpxgo54m0ozrorucuU8KQjndg1sugQi4GCeVnwFj9GcB0WE4Io2Unsf2qq7/8HM+aItM+toftLFZ/BHFdHhPjNcA1jm1vcaR5sGDF5sEcXjKsq9+xrra5lzGotp0ApW8GwyDjHTEOLbE9BsslUw8Bhu4AdBx0eYqiipLJWJxqEb4mk4qv58I0wJ81gIX3mqUIVYp0bIuRxARY4rZSCJ2pTDMmSK4dJtMMcxTzrBQM5MPy8XGApKMtBwFEZqAVymIImHU91Kl+IBkXfBri7IF0iV/urDcYltk5msxGun7Iph42fYuxXFq5Sck8hiP7u+8qQOchtQdA5hJApeyugyij8pHY7kXIpRXrM94yvHiZm5lV4u96faOExQDCAtkPLXwffQJul9nqSs2KaRol2jRs0n49/5qqcqW6QjY5yNoeko1+oFqbxuqUOQXRM2U+2uTyQdHciITHcN0qt3FTfMToVadXrLFh3tI8RPRdtlMRmIuu72iaxtaauDET89gsYhME4k3DxvcesCGlIsD67wbh7JjMY0/zG2WLoycATl3EookOW/wAMIt9M7V4kQaVzxwGFw4iAJuMSDhS6jppGyW6vRNgm+5BiRM+qJEhWzi8lYv6r5HkY4z03nB0ExJsfGA8d8Esmx7D5payybEE/rWKWM1MMNHUhXJ2zWzVTJVQw6aSrG7lxS7crAc/5mFsIHfoNMSGAmmMMD6Ph3wB8fZ39Fqb+CD6P7jwcnLu0KqhAAAAAElFTkSuQmCC) no-repeat;
+    background-size:100% 100%;
+    margin:0 12rpx -3rpx 0;
+}
+.msg-detail-con{
+    padding:0 30rpx 48rpx;
+}
+.msg-detail-con .answer{
+    font-size:32rpx;
+    color:#333;
+    line-height:70rpx;
+    border-bottom:1rpx solid #F3F3F3;
+}
+.msg-detail-con .reason{
+    font-size:28rpx;
+    color:#666;
+    line-height:40rpx;
+    margin-top:30rpx;
+}

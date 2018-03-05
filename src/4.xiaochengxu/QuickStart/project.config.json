@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.7.0",
-	"appid": "wx0bcbf0dadc9f20c0",
-	"projectname": "QuickStart",
+	"libVersion": "1.7.2",
+	"appid": "wx438218527f3dcccc",
+	"projectname": "%E8%B5%B0%E5%95%86",
 	"condition": {
 		"search": {
 			"current": -1,
