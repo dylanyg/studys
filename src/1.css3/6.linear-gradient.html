@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>渐变</title>
+    <style>
+        .gradient-wrap{
+            overflow: hidden;
+            margin: 30px auto;
+        }
+        .gradient-box {
+            float:left;
+            position: relative;
+            margin-right:30px;
+        }
+        .gradient-0,.gradient-90,.gradient-180,.gradient-270{
+            width:400px;
+            height: 400px;
+            border-radius: 200px;
+        }
+
+        .gradient-0 {
+            margin: 0 auto;
+            background: -webkit-linear-gradient(360deg, red, yellow, blue);
+            /* Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(0deg, red, yellow, blue);
+            /* Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(0deg, red, yellow, blue);
+            /* Firefox 3.6 to 15 */
+            background: linear-gradient(0, red, yellow, blue);
+            /* 标准语法 (必须在最后) */
+        }
+        .gradient-90 {
+            margin: 0 auto;
+            background: -webkit-linear-gradient(360deg, red, yellow, blue);
+            /* Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(0deg, red, yellow, blue);
+            /* Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(0deg, red, yellow, blue);
+            /* Firefox 3.6 to 15 */
+            background: linear-gradient(45deg, red, yellow, blue);
+            /* 标准语法 (必须在最后) */
+        }
+        .gradient-180 {
+            margin: 0 auto;
+            background: -webkit-linear-gradient(360deg, red, yellow, blue);
+            /* Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(0deg, red, yellow, blue);
+            /* Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(0deg, red, yellow, blue);
+            /* Firefox 3.6 to 15 */
+            background: linear-gradient(135deg, red, yellow, blue);
+            /* 标准语法 (必须在最后) */
+        }
+        .gradient-270 {
+            margin: 0 auto;
+            background: -webkit-linear-gradient(360deg, red, yellow, blue);
+            /* Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(0deg, red, yellow, blue);
+            /* Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(0deg, red, yellow, blue);
+            /* Firefox 3.6 to 15 */
+            background: linear-gradient(225deg, red, yellow, blue);
+            /* 标准语法 (必须在最后) */
+        }
+
+        .media-linear {
+            height: 5px;
+            border-left:200px solid transparent;
+            border-right:200px solid #333;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .round-dot{
+            width:20px;
+            height:20px;
+            background: #333;
+            border-radius: 10px;
+            position:absolute;
+            top:202px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .pointer-box{
+            width:400px;
+            height:5px;
+            position:absolute;
+            top:200px;
+            transform: translateY(-50%);
+        }
+        .pointer-0{
+            height: 5px;
+            border-left:200px solid transparent;
+            border-right:200px solid #333;
+        }
+        .pointer-90{
+            height: 5px;
+            border-left:200px solid transparent;
+            border-right:200px solid #333;
+            transform:rotate(45deg);
+        }
+        .pointer-180{
+            height: 5px;
+            border-left:200px solid transparent;
+            border-right:200px solid #333;
+            transform:rotate(135deg);
+        }
+        .pointer-270{
+            height: 5px;
+            border-left:200px solid transparent;
+            border-right:200px solid #333;
+            transform:rotate(225deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="gradient-wrap">
+        <div class="gradient-box">
+            <div class="gradient-0">
+            </div>
+            <div class="media-linear">
+            </div>
+            <div class="round-dot"></div>
+            <div class="pointer-box">
+                <div class="pointer-0"></div>
+            </div>
+            <h2>0度</h2>
+        </div>
+        <div class="gradient-box">
+            <div class="gradient-90">
+            </div>
+            <div class="media-linear">
+            </div>
+            <div class="round-dot"></div>
+            <div class="pointer-box">
+                    <div class="pointer-90"></div>
+                </div>
+            <h2>45度</h2>
+        </div>
+        <div class="gradient-box">
+            <div class="gradient-180">
+            </div>
+            <div class="media-linear">
+            </div>
+            <div class="round-dot"></div>
+            <div class="pointer-box">
+                    <div class="pointer-180"></div>
+                </div>
+            <h2>135度</h2>
+        </div>
+        <div class="gradient-box">
+            <div class="gradient-270">
+            </div>
+            <div class="media-linear">
+            </div>
+            <div class="pointer-box">
+                    <div class="pointer-270"></div>
+                </div>
+            <div class="round-dot"></div>
+            <h2>225度</h2>
+        </div>
+    </div>
+</body>
+
+</html>

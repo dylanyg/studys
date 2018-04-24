@@ -38,26 +38,26 @@
                 overflow:hidden; /* attention */
             }
             .two-columns-left-fixed-right-self-adaption-1-left{
-                background:#ccc;
-                float:left; /* attention */
-                height:50px;
-                width:200px;
-            }
-            .two-columns-left-fixed-right-self-adaption-1-right{
                 background:#333;
                 height:50px;
-                margin-left:200px; /* attention */
+                margin-right:200px
+            }
+            .two-columns-left-fixed-right-self-adaption-1-right{
+                float:right;
+                background:#ccc;
+                width:200px;
+                height:50px;
             }
             </style>
             <div class="demo">
                 <div class="two-columns-left-fixed-right-self-adaption-1-wrap">
-                    <div class="two-columns-left-fixed-right-self-adaption-1-left"></div>
                     <div class="two-columns-left-fixed-right-self-adaption-1-right"></div>
+                    <div class="two-columns-left-fixed-right-self-adaption-1-left"></div>
                 </div>
             </div>
             <p class="desc">
             优点：易于理解，兼容性较强。
-            缺点：在进行右列自适应的属性设置时需要已知左列宽度。
+            缺点：右侧固定元素需要前置
             适用场景：已知左列宽度大小的左列定宽，右列自适应的两列布局。
             </p>
         </div>
@@ -95,17 +95,17 @@
                 position:relative; /* attention */
             }
             .two-columns-left-fixed-right-self-adaption-2-left{
+                background:#333;
+                height:50px;
+                margin-right:200px; /* attention */
+            }
+            .two-columns-left-fixed-right-self-adaption-2-right{
                 background:#ccc;
                 height:50px;
-                left:0; /* attention */
+                right:0; /* attention */
                 position:absolute; /* attention */
                 top:0; /* attention */
                 width:200px;
-            }
-            .two-columns-left-fixed-right-self-adaption-2-right{
-                background:#333;
-                height:50px;
-                margin-left:200px; /* attention */
             }
             </style>
             <div class="demo">
@@ -116,7 +116,7 @@
             </div>
             <p class="desc">
             优点：易于理解，兼容性较强。
-            缺点：在进行右列自适应的属性设置时需要已知左列宽度。
+            缺点：绝对定位造成与兄弟元素重合
             适用场景：已知左列宽度大小的左列定宽，右列自适应的两列布局。
             </p>
         </div>
@@ -153,16 +153,16 @@
                 display:-webkit-box; /* attention */
             }
             .two-columns-left-fixed-right-self-adaption-3-left{
-                background:#ccc;
-                display:block; /* attention */
-                height:50px;
-                width:200px; /* attention */
-            }
-            .two-columns-left-fixed-right-self-adaption-3-right{
-                -webkit-box-flex:1; /* attention */
+                -webkit-box-flex: 1;
                 background:#333;
                 display:block; /* attention */
                 height:50px;
+            }
+            .two-columns-left-fixed-right-self-adaption-3-right{
+                background:#ccc;
+                display:block; /* attention */
+                height:50px;
+                width:200px;
             }
             </style>
             <div class="demo">
@@ -214,12 +214,12 @@
                 background:#ccc;
                 display:table-cell; /* attention */
                 height:50px;
-                width:200px;
             }
             .two-columns-left-fixed-right-self-adaption-4-right{
                 background:#333;
                 display:table-cell; /* attention */
                 height:50px;
+                width:200px;
             }
             </style>
             <div class="demo">
@@ -267,14 +267,19 @@
             .two-columns-left-fixed-right-self-adaption-5-wrap{
                 overflow:hidden; /* attention */
             }
-            .two-columns-left-fixed-right-self-adaption-5-right{
+            .two-columns-left-fixed-right-self-adaption-5-left{
                 background:#333;
                 float:left; /* attention */
                 height:50px;
-                margin-right:-100%; /* attention */
+                margin-right:-200px; /* attention */
                 width:100%; /* attention */
             }
-            .two-columns-left-fixed-right-self-adaption-5-left{
+            .content{
+                margin-right:200px;
+                text-align: right;
+                color:#fff;
+            }
+            .two-columns-left-fixed-right-self-adaption-5-right{
                 background:#ccc;
                 float:left; /* attention */
                 height:50px;
@@ -283,13 +288,15 @@
             </style>
             <div class="demo">
                 <div class="two-columns-left-fixed-right-self-adaption-5-wrap">
-                    <div class="two-columns-left-fixed-right-self-adaption-5-right"></div>
-                    <div class="two-columns-left-fixed-right-self-adaption-5-left"></div>
+                    <div class="two-columns-left-fixed-right-self-adaption-5-left">
+                        <div class="content">左侧内容</div>
+                    </div>
+                    <div class="two-columns-left-fixed-right-self-adaption-5-right">右侧栏</div>
                 </div>
             </div>
             <p class="desc">
             优点：兼容性较强。
-            缺点：不易于理解。
+            缺点：不易于理解。需要额外嵌套一层div消除margin负值影响
             适用场景：适用于主内容需优先显示的场景。
             </p>
         </div>

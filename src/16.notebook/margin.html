@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Margin</title>
+    <style>
+        .father {
+            width: 300px;
+            margin: 0 -20px;
+            outline: 1px solid red;
+        }
+
+        .son {
+            margin: 0 -20px;
+            outline: 1px solid green;
+        }
+        .box{
+            overflow: hidden;
+        }
+        .box img {
+            float: right;
+        }
+
+        .box p {
+            margin-right: 160px;
+        }
+        .box-2{
+            
+        }
+        .column-left,.column-right{
+            display:inline-block;
+            margin-bottom:-999px;
+            padding-bottom:999px;
+            background-color:green;
+        }
+        .table{
+            display: table;
+        }
+       .table-cell{
+           display:table-cell;
+           padding-right:20px;
+       }
+       .table-cell .content{
+           width:200px;
+           height:200px;
+           background-color:aqua;
+       }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <h1>一侧定宽两栏自适应布局</h1>
+    <div class="box">
+        <img src="http://pic2.58cdn.com.cn/bizmp/n_v29a1ff7cebb5243e1a46fcaa6358b63f7_8406b1df18abc712.jpg?w=140&h=140" alt="">
+        <p>一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局</p>
+    </div>
+    <div class="box">
+        <img src="http://pic2.58cdn.com.cn/bizmp/n_v29a1ff7cebb5243e1a46fcaa6358b63f7_8406b1df18abc712.jpg?w=140&h=140" alt="">
+        <p>一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局一侧定宽两栏自适应布局</p>
+    </div>
+    <h1>table多列布局</h1>
+    <div class="table">
+        <div class="table-cell"><div class="content"></div></div>
+        <div class="table-cell"><div class="content"></div></div>
+        <div class="table-cell"><div class="content"></div></div>
+        <div class="table-cell"><div class="content"></div></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .table {
+            width: 100%;
+            display: table;
+        }
+
+        .table-row {
+            display: table-row;
+        }
+        .table-cell {
+            display: table-cell;
+            height: 100px;
+            vertical-align: middle;
+            background-color: gold;
+            border-right: 30px solid #fff;
+            border-bottom: 30px solid #fff;
+        }
+        .table-row>:last-child{
+            border-right:0;
+        }
+        .table>:last-child{
+            border-bottom:0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>table-cell实现多列布局</h1>
+    <div class="table">
+        <div class="table-row">
+            <div class="table-cell">单元格单元格单元格</div>
+            <div class="table-cell">单元格单元格单元格</div>
+            <div class="table-cell">单元格单元格单元格</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">单元格单元格单元格</div>
+            <div class="table-cell">单元格单元格单元格</div>
+            <div class="table-cell">单元格单元格单元格</div>
+        </div>
+    </div>
+</body>
+
+</html>

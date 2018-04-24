@@ -1,0 +1,12 @@
+<view class="body">
+    <view class="container">
+        <view class="coupon-title">满{{limitAmount}}元可用</view>
+        <view class="coupon-value">￥<text>20</text></view>
+        <view class="coupon-cate">仅限家庭保洁服务类</view>
+        <view class="coupon-period">2018.06.08-2018.07.01</view>
+        <view class="use-button" bindtap="useCoupon">立即使用</view>
+        <button class="share-button">分享给好友</button>
+        <view class="split-title">使用说明</view>
+        <view class="use-instro">本期教程主要讲解如何使用效果和预设里的涂写。</view>
+    </view>
+</view>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["src\\main.js","src\\index.js"],"names":["console","log"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,QAAQC,GAAR,CAAY,sBAAZ;;;;ACAA","file":"b106bf3ab1fde347103030675182d9c6.map","sourcesContent":["console.log(\"hello parcel-bundler\")","import main from \"./main.js\""]}

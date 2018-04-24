@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h3 {
+            margin: 0;
+            font-size: 100%;
+            font-weight: 100%;
+        }
+
+        .border {
+            width: 10px;
+            height: 10px;
+            border: 10px solid;
+            border-color: #f30 #00f #396 #0f0;
+        }
+
+        .box {
+            border-left: 150px solid #333;
+            background-color: #f0f3f9;
+        }
+
+        .box:after {
+            content: '';
+            display: inline-block;
+            clear: both;
+        }
+
+        .box>nav {
+            width: 150px;
+            float: left;
+            margin-left: -150px;
+        }
+
+        .box>section {
+            overflow: hidden;
+        }
+
+        /* 导航列表和模块列表 */
+
+        .nav {
+            line-height: 40px;
+            color: #fff;
+        }
+
+        .module {
+            line-height: 40px;
+        }
+
+        .table {
+            display: table;
+            width: 100%;
+        }
+
+        .table-cell {
+            display: table-cell;
+            background-color:#0f0;
+            border-right:30px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border"></div>
+    <h1>border实现等高布局</h1>
+    <div class="box">
+        <nav>
+            <h3 class="nav">导航1</h3>
+        </nav>
+        <section>
+            <div class="module">模块1</div>
+        </section>
+    </div>
+    <div class="box">
+        <nav>
+            <h3 class="nav">导航1</h3>
+        </nav>
+        <section>
+            <div class="module">模块1</div>
+        </section>
+    </div>
+    <h1>table布局</h1>
+    <div class="table">
+        <div class="table-cell">
+            单元格1
+        </div>
+        <div class="table-cell">
+            单元格1
+        </div>
+    </div>
+</body>
+
+</html>
