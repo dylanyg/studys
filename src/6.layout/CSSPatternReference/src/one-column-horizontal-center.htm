@@ -34,7 +34,7 @@
                 <div class="one-column-horizontal-center-1"></div>
             </div>
             <p class="desc">
-            优点：兼容性比较强，易于理解，不需要已知内容宽度。
+            优点：兼容性比较强，易于理解。
             适用场景：内容为定宽的block元素。
             </p>
         </div>
@@ -137,6 +137,7 @@
                 </div>
             </div>
             <p class="desc">
+            注意：float隐藏属性宽度自适应
             优点：兼容性比较强，不需要已知内容宽度。
             缺点：不易于理解，依赖的父容器较多。
             适用场景：结构较复杂的情况。
@@ -238,10 +239,49 @@
                     <span class="html">&lt;/div&gt;</span>
                     &lt;!-- css --&gt;
                     <span class="css-class">.one-column-horizontal-center-6-wrap</span><span class="css-brace">{</span>
+                    <span class="css-property">display</span>:<span class="css-value">flex</span>;
+                    <span class="css-property">margin</span>:<span class="css-value">0</span>;
+                    <span class="css-brace">}</span>
+                    <span class="css-class">.one-column-horizontal-center-6</span><span class="css-brace">{</span>
+                    <span class="css-property">margin</span>:<span class="css-value">auto</span>;/* attention */
+                    <span class="css-property">height</span>:<span class="css-value">50px</span>;
+                    <span class="css-property">width</span>:<span class="css-value">200px</span>;
+                    <span class="css-brace">}</span>
+                </code>
+            </pre>
+            <span>Demo：父flex和子margin.auto</span>
+            <style>
+                .one-column-horizontal-center-6-wrap {
+                    display: flex;
+                    margin: 0;
+                }
+                .one-column-horizontal-center-6{
+                    margin: auto;
+                    width: 200px;
+                    height:50px;
+                    background: #ccc;
+                }
+            </style>
+            <div class="demo">
+                <div class="one-column-horizontal-center-6-wrap">
+                    <div class="one-column-horizontal-center-6"></div>
+                </div>
+            </div>
+        </div>
+        <!-- one-column-horizontal-center-7 -->
+        <div class="wrap">
+            <pre>
+                <code>
+                    &lt;!-- html --&gt;
+                    <span class="html">&lt;div class="one-column-horizontal-center-7-wrap"&gt;</span>
+                    <span class="html-child">&lt;div class="one-column-horizontal-center-7"&gt;&lt;/div&gt;</span>
+                    <span class="html">&lt;/div&gt;</span>
+                    &lt;!-- css --&gt;
+                    <span class="css-class">.one-column-horizontal-center-7-wrap</span><span class="css-brace">{</span>
                     <span class="css-property">margin</span>:<span class="css-value">0 auto</span>; /* attention */
                     <span class="css-property">width</span>:<span class="css-value">-webkit-fit-content</span>; /* attention */
                     <span class="css-brace">}</span>
-                    <span class="css-class">.one-column-horizontal-center-6</span><span class="css-brace">{</span>
+                    <span class="css-class">.one-column-horizontal-center-7</span><span class="css-brace">{</span>
                     <span class="css-property">background</span>:<span class="css-value">#ccc</span>;
                     <span class="css-property">height</span>:<span class="css-value">50px</span>;
                     <span class="css-property">width</span>:<span class="css-value">200px</span>;
@@ -250,19 +290,19 @@
             </pre>
             <span class="title">Demo:</span>
             <style>
-            .one-column-horizontal-center-6-wrap{
+            .one-column-horizontal-center-7-wrap{
 			    margin:0 auto; /* attention */
 			    width:-webkit-fit-content; /* attention */
             }
-            .one-column-horizontal-center-6{
+            .one-column-horizontal-center-7{
                 background:#ccc;
                 height:50px;
                 width:200px;
             }
             </style>
             <div class="demo">
-                <div class="one-column-horizontal-center-6-wrap">
-                    <div class="one-column-horizontal-center-6"></div>
+                <div class="one-column-horizontal-center-7-wrap">
+                    <div class="one-column-horizontal-center-7"></div>
                 </div>
             </div>
             <p class="desc">

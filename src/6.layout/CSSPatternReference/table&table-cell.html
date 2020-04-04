@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .table {
+      display: table;
+      width: 100%; /* table布局必须指定宽度 */
+    }
+    .table-cell {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .cell-fixed {
+      width: 200px;
+      background: #ccc;
+    }
+    .cell-auto {
+      background: #333;
+    }
+    .flex {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>table实现多列居中<h2>
+  <div class="table">
+    <div class="table-cell"><img src="../images/logo-duomian.png"/></div>
+    <div class="table-cell cell-fixed">固定宽度200px</div>
+    <div class="table-cell cell-auto">
+      <img src="../images/teach5.png" />
+    </div>
+  </div>
+  <h2>flex实现多列居中</h2>
+  <div class="flex">
+    <img src="../images/logo-duomian.png"/>
+    <div>固定宽度200px</div>
+    <img src="../images/teach5.png" />
+  </div>
+</body>
+</html>
